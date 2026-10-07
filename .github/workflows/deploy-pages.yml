@@ -20,16 +20,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
       - name: 安装依赖
-        run: npm ci || npm install
+        run: pnpm install --frozen-lockfile
 
       - name: 构建
-        run: npm run build
+        run: pnpm run build
 
       - name: 关闭 Jekyll（否则 data/ 等目录可能被忽略）
         run: touch dist/.nojekyll

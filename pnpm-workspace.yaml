@@ -1,5 +1,5 @@
+# pnpm 11 起，允许执行安装脚本的依赖白名单统一为 allowBuilds 映射（{ 包名: true | false }），
+# 旧的 onlyBuiltDependencies / ignoredBuiltDependencies 已合并进这里。
+# esbuild 需要运行安装脚本（Vite 依赖它），必须显式设为 true 才会构建。
 allowBuilds:
-  esbuild: set this to true or false
-# pnpm 11 起，允许执行安装脚本的依赖白名单写在这里
-onlyBuiltDependencies:
-  - esbuild
+  esbuild: true
