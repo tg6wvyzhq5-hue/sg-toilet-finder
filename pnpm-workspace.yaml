@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: set this to true or false
+# pnpm 11 起，允许执行安装脚本的依赖白名单写在这里
+onlyBuiltDependencies:
+  - esbuild
